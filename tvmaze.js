@@ -20,7 +20,7 @@
 async function searchShows(query) {
   // TODO: Make an ajax request to the searchShows api.  Remove
   // hard coded data.
-  let res = await axios.get("http://api.tvmaze.com/search/shows", {params: {q: query}});
+  let res = await axios.get("https://api.tvmaze.com/search/shows", {params: {q: query}});
   return res.data;
 }
 
@@ -78,7 +78,7 @@ $("#search-form").on("submit", async function handleSearch (evt) {
  */
 
 async function getEpisodes(id) {
-  let res = await axios.get(`http://api.tvmaze.com/shows/${id}/episodes`);
+  let res = await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`);
   populateEpisodes(res.data);
 }
 
